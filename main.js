@@ -21,18 +21,30 @@ function submitIssue(e) {
   e.preventDefault();
 }
 
-const closeIssue = id => {
+const setStatusClosed = id => {
   const issues = JSON.parse(localStorage.getItem('issues'));
-  const currentIssue = issues.find(issue => issue.id === id);
+  const currentIssue = issues.find(issue => issue.id == id);
   currentIssue.status = 'Closed';
   localStorage.setItem('issues', JSON.stringify(issues));
   fetchIssues();
+
 }
 
 const deleteIssue = id => {
+
+  console.log(id);
+
   const issues = JSON.parse(localStorage.getItem('issues'));
-  const remainingIssues = issues.filter( issue.id !== id )
+
+  console.log(issues);
+
+  const remainingIssues = issues.filter( issue => issu.id != id )
+
+  console.log(remainingIssues)
+
   localStorage.setItem('issues', JSON.stringify(remainingIssues));
+
+  fetchIssues();
 }
 
 const fetchIssues = () => {
