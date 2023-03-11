@@ -38,7 +38,7 @@ const deleteIssue = id => {
 
   console.log(issues);
 
-  const remainingIssues = issues.filter( issue => issu.id != id )
+  const remainingIssues = issues.filter( issue => issue.id != id )
 
   console.log(remainingIssues)
 
